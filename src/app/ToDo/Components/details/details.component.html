@@ -1,0 +1,17 @@
+<div class="container form-group" style="margin: 15px 5px">
+    <h2>Todo Details</h2>
+    <div *ngIf="this.todos">
+        <p><strong>ID:</strong> {{ this.todos.id }}</p>
+        <p>
+            <strong>Title:</strong>
+            <input [(ngModel)]="this.todos.title" />
+        </p>
+        <p>
+            <strong>Status:</strong>
+            <input type="checkbox" [(ngModel)]="this.todos.completed" />
+        </p>
+        <button (click)="onDelete(this.todos.id)">Delete</button>
+        <button (click)="onUpdate(this.todos)">Update</button>
+        <button routerLink="/list">Back</button>
+    </div>
+</div>
